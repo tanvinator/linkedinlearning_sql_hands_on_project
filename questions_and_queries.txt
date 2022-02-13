@@ -1,18 +1,25 @@
 --Question 1 :
 -- Find all the active employees at present
+
 SELECT
     COUNT(EmployeeKey)
 FROM
     employees
 WHERE
-    Status = 'Current';--Question 2:
-    --Find the first and the last record of employee start dates
+    Status = 'Current';
+
+--Question 2:
+--Find the first and the last record of employee start dates
+
 SELECT
     min(employees.StartDate),
     max(employees.StartDate)
 FROM
-    employees;--Question 3:
-    --Find the number of people starting every month in any year
+    employees;
+
+--Question 3:
+--Find the number of people starting every month in any year
+
 SELECT
     MONTH(employees.StartDate),
     YEAR(employees.StartDate),
@@ -24,9 +31,12 @@ GROUP BY
     YEAR(employees.StartDate)
 ORDER BY
     2,
-    1;--Question 4:
-    -- How many active employees on a given date?
-    --Lets say the given date is 2010-12-10
+    1;
+
+--Question 4:
+-- How many active employees on a given date?
+--Lets say the given date is 2010-12-10
+
 SELECT
     count(1)
 FROM
